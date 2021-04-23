@@ -9,3 +9,6 @@ help: ## show this help message.
 up: ## run elm-reload
 	@npm run start
 
+.PHONY: clean
+clean: ## remove build files
+	@rm -rf elm-stuff dist/main.js node_modules
