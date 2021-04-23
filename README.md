@@ -2,7 +2,6 @@
 ## Usage
 
 ```bash
-$ npm i
 $ make up
 ```
 
