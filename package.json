@@ -4,8 +4,8 @@
     "elm-live": "^4.0.2"
   },
   "scripts": {
-    "start": "elm-live src/Main.elm --open -- --output='elm.js' --debug",
+    "start": "elm-live src/Main.elm --open -- --output='app.js' --debug",
     "server": "elm reactor --port=8000",
-    "make": "elm make src/Main.elm --debug --output='elm.js'"
+    "make": "elm make src/Main.elm --debug --output='app.js'"
   }
 }
