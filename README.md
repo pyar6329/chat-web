@@ -3,7 +3,7 @@
 
 ```bash
 $ npm i
-$ npm run start
+$ make up
 ```
 
 ref: https://github.com/elm-community/js-integration-examples/tree/master/websockets
