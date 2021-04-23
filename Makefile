@@ -1,3 +1,5 @@
+MAKEFILE_DIR:=$(dir $(abspath $(lastword $(MAKEFILE_LIST))))
+
 # To apply self documented help command,
 # make target with following two sharp '##' enable to show the help message.
 # If you wish not to display the help message, create taget with no comment or single sharp to comment.
@@ -7,6 +9,7 @@ help: ## show this help message.
 
 .PHONY: up
 up: ## run elm-reload
+	@if ! [ -e $(MAKEFILE_DIR)/node_modules ]; then npm i; fi
 	@npm run start
 
 .PHONY: clean
