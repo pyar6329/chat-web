@@ -1,13 +1,21 @@
 {
-  "devDependencies": {
-    "elm": "^0.19.1-5",
-    "elm-format": "^0.8.5",
-    "elm-live": "^4.0.2",
-    "elm-test": "*"
-  },
+  "name": "chat-web",
+  "version": "0.1.0",
+  "description": "chat-web app",
   "scripts": {
-    "start": "elm-live src/Main.elm --open --host='0.0.0.0' --port='8888' -- --output='dist/main.js' --debug",
-    "server": "elm reactor --host='0.0.0.0' --port='8888'",
-    "make": "elm make src/Main.elm --debug --output='dist/main.js'"
+    "start": "npx parcel -p 8888 ./src/index.html",
+    "build": "npx parcel build ./src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "@parcel/transformer-elm": "^2.0.0-beta.2",
+    "elm": "^0.19.1-5",
+    "parcel": "^2.0.0-beta.2"
+  },
+  "dependencies": {
+    "@pyar6329/chat-proto": "^0.1.0"
   }
 }

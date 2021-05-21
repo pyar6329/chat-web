@@ -7,9 +7,13 @@ MAKEFILE_DIR:=$(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 help: ## show this help message.
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
+.PHONY: install
+install: ## run npm install
+	@$(MAKEFILE_DIR)/script/startup.sh
+
 .PHONY: up
 up: ## run elm-reload
-	@if ! [ -e $(MAKEFILE_DIR)/node_modules ]; then npm i; fi
+	@if ! [ -e $(MAKEFILE_DIR)/node_modules ]; then make install; fi
 	@npm run start
 
 .PHONY: clean
